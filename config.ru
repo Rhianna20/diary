@@ -1,3 +1,2 @@
-require_relative "./app"
-
-run Diary
+require_relative './app'
+run Diaryapp

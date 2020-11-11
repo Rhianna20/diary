@@ -1,10 +1,16 @@
 require 'sinatra/base'
+require './lib/diary'
 
-class Diary
-  gets '/' do
+class Diaryapp < Sinatra::Base 
+  get '/' do
     'Hey Rhianna!'
   end
 
-  run! if app_file = $0
+  get '/diary' do
+    @Diary = Diary.all
+    erb:'/diary'
+  end
+
+  run! if app_file == $0
 
 end
