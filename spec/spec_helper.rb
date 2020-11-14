@@ -18,6 +18,11 @@ require 'pg'
 # Tells capybara to talk to Diary
 Capybara.app = Diaryapp
 
+def persisted_data(id:)
+  connection = PG.connect(dbname: 'Diary_entries_test')
+  result = connection.query("SELECT * FROM diary_notes WHERE id = #{id};")
+  result.first
+end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

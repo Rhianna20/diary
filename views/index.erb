@@ -1,0 +1,13 @@
+<ul>
+<% @word_otd.each do |word_otd| %>
+<li>
+Hello, <%= @username.word_otd %>
+<form action="/diary/<%= Diary.id %>" method="post">
+<input type="hidden" name="_method" value="DELETE"/>
+<input type="submit" value="Delete"/>
+
+</form>
+</li>
+
+<% end %>
+</ul>
